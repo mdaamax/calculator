@@ -1,25 +1,28 @@
 <?php
+include 'oper.php';
+
 $number1 = $_POST['number1'];
 $number2 = $_POST['number2'];
 $operation = $_POST['operation'];
 
     switch($operation) {
         case 'add':
-            $result = $number1 + $number2;
+            $result = getSum($number1,$number2);
             break;
         case 'subtract':
-            $result = $number1 - $number2;
+            $result = getSub($number1,$number2);
             break;
         case 'multiply':
-            $result = $number1 * $number2;
+            $result = getMul($number1,$number2);
             break;
         case 'divide':
-            $result = $number1 / $number2;
+            $result = getDiv($number1,$number2);
             break;
         default:
             $result = "Недопустимая операция";
     }
 echo "Результат: " . $result;
+
 
 ?>
 
